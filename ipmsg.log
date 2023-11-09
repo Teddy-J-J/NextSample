@@ -1,0 +1,128 @@
+=====================================
+ From: Kim Gwon Chol (2-1/SMURF/192.168.1.126/Micle-<a6b4d37595730e9c>)
+  at Mon Sep 11 07:06:09 2023 (RSA2/Signed)(sealed)
+-------------------------------------
+## - GPS tracking system
+
+When I was working in my previous role, my team and I were tasked with a refactoring project for one of our top clients. The client had already developed version one of their GPS-tracking system for car rental companies, which was built with Angular for the front end, Java for the backend, and MongoDB for the database. This system allowed the client to track and control cars on a map using GPS devices installed in the cars. After running the system for about four years, the client started experiencing performance issues due to the high traffic and increasing number of devices and users.
+
+&nbsp;
+
+------------------------
+
+&nbsp;
+
+The integration of ArcGIS in your GPS tracking system brought several valuable enhancements. ArcGIS provided advanced mapping capabilities with various map layers, including street maps, satellite imagery, and topographic data. Users could interact with the maps, zoom in and out, and pan across locations, improving the visual experience. The geocoding and reverse geocoding services allowed users to search for specific addresses or locations, enhancing the system's search functionality. Geofencing capabilities enabled the system to define virtual boundaries on the map and trigger actions or notifications when cars entered or exited these areas. ArcGIS's routing and directions features facilitated optimal route calculations, considering real-time traffic conditions and road closures. The system also leveraged ArcGIS's spatial analysis tools to perform proximity analysis, spatial queries, and analyze patterns and trends based on location data. Overall, the integration of ArcGIS enhanced the mapping, geocoding, geofencing, routing, and spatial analysis capabilities of your GPS tracking system, resulting in improved operations and an enhanced user experience.
+
+--------------
+
+&nbsp;
+
+&nbsp;
+
+The legacy code was built with JavaScript. We migrated JavaScript to typescript and as a result, the code readability and code organization were improved and especially, we could avoid silly bugs, like static typing.
+
+The legacy project was monolithic project. So, we decided to migrate the project from monolithic to microservice architecture. For that, we split the legacy system into several systems that are independent of the other systems and deployed according to systems. As a result, we could reduce deploy time.
+
+We used AWS EC2 to handle large number of requests and to store large number of datas, we used s3 bucket, DynamoDB and event-driven, we used SNS and for debugging and log we used AWS cloudwatch.
+
+To address these issues, we decided to migrate Angular to React, Java to Node.js and MongoDB to PostgreSQL. During the planning phase, we were unsure how to best migrate Angular to React. We considered two approaches: rewriting the code from scratch or using the strangler pattern. While rewriting the code would be time-consuming, it would eliminate the need for integration bridges between old and new code, allowing us to develop quickly and with fewer complications. This was the approach I suggested, given that the project was highly expandable due to the ongoing upgrades and added features.
+
+I explained the technical and practical benefits of this approach to our client in plain language, emphasizing that a clean architecture would make it easier to expand the system in the future. The client appreciated our thoughtful consideration of their need and goals. Although, the project presented several challenges and conflicts, my team and I overcame them all and ultimately succeeded in delivering a high-performance and highly expandable system for our client.
+
+=====================================
+ From: Han Byol Hyok(eFound) (2-2/DESKTOP-DKDG1JC/192.168.1.137/Admin-<ccee451033d2089b>)
+  at Mon Sep 11 11:58:13 2023 (RSA2)(sealed)
+-------------------------------------
+lcollins.dev@outlook.com
+
+=====================================
+ From: Han Byol Hyok(eFound) (2-2/DESKTOP-DKDG1JC/192.168.1.137/Admin-<ccee451033d2089b>)
+  at Mon Sep 11 11:59:09 2023 (RSA2/Signed)(sealed)
+-------------------------------------
+live:.cid.dcc885ec2f5cfe26
+
+=====================================
+ From: Kim Gwon Chol (2-1/SMURF/192.168.1.126/Smurf-<d717036018d84c67>)
+  at Tue Sep 12 06:43:35 2023 (RSA2)(sealed)
+  (files) Microsoft Office 2019 Pro Plus v2010 Build 13328.20292 x64 [FileCR]
+-------------------------------------
+
+
+=====================================
+ To: Kim Gwon Chol (2-1/SMURF/192.168.1.126/Smurf-<d717036018d84c67>)
+  at Tue Sep 12 19:55:51 2023 (RSA2/Signed)(sealed)
+-------------------------------------
+function myFunction() {
+  // Function body
+    myFunction.p = function() {
+  console.log('P');
+};
+}
+myFunction();
+
+myFunction.p();
+
+=====================================
+ To: PaekNamJun-eFound (2-1/DESKTOP-V9HTDVM/192.168.1.115/John-<1b6622454f1df796>)
+  at Wed Sep 13 04:52:39 2023 (RSA2/Signed)(sealed)
+  (files) Javascript Q&A.docx
+-------------------------------------
+
+
+=====================================
+ From: PaekNamJun-eFound (2-1/DESKTOP-V9HTDVM/192.168.1.115/John-<1b6622454f1df796>)
+   Cc: Kim Gwon Chol (2-1/SMURF/192.168.1.126/Smurf-<d717036018d84c67>)
+   Cc: Rim Chol Bom (2-1/DESKTOP-3E964G6/192.168.1.120/Andrew-<bffe04e9952cdd1f>)
+  at Wed Sep 13 04:53:08 2023 (multi)(RSA2/Signed)(sealed)
+  (files) Teams, QA
+-------------------------------------
+
+
+=====================================
+ From: Kim Gwon Chol (2-1/SMURF/192.168.1.126/Smurf-<d717036018d84c67>)
+  at Wed Sep 13 16:46:26 2023 (RSA2/Signed)(sealed)
+  (files) alloy-alloy-389.zip, jakroo-web-feature-JV2-0628-NorNumberValidation.zip
+-------------------------------------
+
+
+=====================================
+ From: Han Byol Hyok(eFound) (2-2/DESKTOP-DKDG1JC/192.168.1.137/Admin-<ccee451033d2089b>)
+  at Thu Sep 14 17:41:25 2023 (RSA2/Signed)(sealed)
+-------------------------------------
+import React, { useState, useEffect } from 'react';
+
+function Bookstore() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    let timerId;
+
+    const handleSearch = () => {
+      // Perform the search operation with the searchQuery
+      console.log('Searching for:', searchQuery);
+    };
+
+    const delay = 300; // Delay in milliseconds
+
+    if (searchQuery) {
+      timerId = setTimeout(handleSearch, delay);
+    }
+
+    return () => clearTimeout(timerId);
+  }, [searchQuery]);
+
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={searchQuery} onChange={handleChange} />
+      {/* Display search results */}
+    </div>
+  );
+}
+
+export default Bookstore;
+
